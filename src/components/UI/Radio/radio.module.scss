@@ -1,0 +1,59 @@
+@use "../../styles";
+
+.radioContainer {
+  margin-bottom: 5px;
+
+  label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 20px;
+    padding: 15px;
+    width: 50%;
+    line-height: 30px;
+
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    .checkmark {
+      opacity: 0;
+      margin-right: 10px;
+
+      &.active {
+        opacity: 1;
+        margin-right: 40px;
+        margin-left: -10px;
+        color: styles.$checkmarkColor;
+        @include styles.handleTransition();
+      }
+    }
+
+    &:hover,
+    &.active {
+      color: styles.$subTextColor;
+      background-color: styles.$hoverBackground;
+      @include styles.handleTransition();
+
+      .checkmark {
+        margin-right: 20px;
+        @include styles.handleTransition();
+      }
+    }
+
+    &.active {
+      input[type="radio"] {
+        margin-right: 0px;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+@include styles.responsive(mobile) {
+  .radioContainer label {
+    width: auto;
+    padding: 1rem;
+    border-radius: 15px;
+  }
+}

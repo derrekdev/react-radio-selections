@@ -1,0 +1,34 @@
+@use "../../styles";
+
+.choiceContainer {
+  margin-bottom: 20px;
+  width: 80%;
+  margin: 0 auto;
+  height: auto;
+  overflow: hidden;
+  @include styles.handleTransition();
+
+  &.hide {
+    height: 0;
+  }
+
+  .subTitle {
+    font-size: styles.$h2Size;
+    margin-bottom: 20px;
+  }
+
+  .choiceSelectionBlock {
+    margin-left: 20px;
+    margin-bottom: 40px;
+  }
+}
+
+@include styles.responsive(mobile) {
+  .choiceContainer {
+    width: 100%;
+
+    .choiceSelectionBlock {
+      margin-left: 0;
+    }
+  }
+}

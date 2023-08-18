@@ -1,0 +1,34 @@
+@use "../../styles";
+
+.footerContainer {
+  display: flex;
+  justify-content: end;
+  gap: 30px;
+
+  button {
+    &.buttonClear {
+      border: 2px solid styles.$buttonBackgroundColor;
+      background-color: transparent;
+    }
+
+    &.buttonSubmit {
+      border: none;
+
+      color: styles.$subTextColor;
+      background-color: styles.$buttonBackgroundColor;
+    }
+
+    &.buttonDisabled {
+      cursor: inherit;
+      background-color: styles.$buttonDisabledBackgroundColor;
+    }
+  }
+}
+
+@include styles.responsive(mobile) {
+  .footerContainer {
+    button {
+      width: 50%;
+    }
+  }
+}

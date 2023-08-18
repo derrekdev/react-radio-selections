@@ -1,0 +1,14 @@
+@use "../../styles";
+
+.button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: styles.$buttonFontSize;
+  cursor: pointer;
+}
+
+@include styles.responsive(mobile) {
+  .button {
+    padding: 10px;
+  }
+}

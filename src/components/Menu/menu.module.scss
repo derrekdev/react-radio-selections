@@ -1,0 +1,31 @@
+@use "../styles";
+
+.container {
+  max-width: 768px;
+  width: 80%;
+  margin: 50px auto;
+  border: 1px solid black;
+  padding: 50px;
+  background-color: styles.$containerColor;
+  border-radius: 20px;
+  font-size: styles.$fontSize;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    font-size: styles.$h1Size;
+    margin-bottom: 20px;
+  }
+
+  .containerMenuChoices {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@include styles.responsive(mobile) {
+  .container {
+    width: 80vw;
+    padding: 20px;
+  }
+}

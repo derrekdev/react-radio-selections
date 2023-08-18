@@ -1,0 +1,22 @@
+@mixin responsive($device) {
+  @if $device == mobile {
+    @media only screen and (max-width: 680px) {
+      @content;
+    }
+  }
+
+  @if $device == desktop {
+    @media only screen and (min-width: 681px) {
+      @content;
+    }
+  }
+}
+
+@mixin handleTransition(
+  $property: all,
+  $seconds: 0.2s,
+  $timing: ease-in,
+  $delay: 0s
+) {
+  transition: $property $seconds $timing $delay;
+}
